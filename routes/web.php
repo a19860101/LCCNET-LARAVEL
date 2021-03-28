@@ -16,14 +16,9 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
-// Route::get('/test',function(){
-//     return view('test');
-// });
-Route::get('/test','TestController@asdf');
-Route::get('/test2','TestController@qwerty');
-Route::get('/about',function(){
-    return view('qwerty');
-});
+
+Route::get('/post','PostController@index');
+
 
 Auth::routes();
 

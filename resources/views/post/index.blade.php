@@ -7,6 +7,9 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>HELLO TEST</h1>
+    <nav>
+        <a href="#">新增文章</a>
+    </nav>
+    <h1>文章列表</h1>
 </body>
 </html>
