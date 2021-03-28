@@ -8,7 +8,8 @@
 </head>
 <body>
     <nav>
-        <a href="#">新增文章</a>
+        <a href="/post">文章列表</a>
+        <a href="/post/create">新增文章</a>
     </nav>
     <h1>文章列表</h1>
 </body>
