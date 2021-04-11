@@ -8,8 +8,8 @@
 </head>
 <body>
     <nav>
-        <a href="/post">文章列表</a>
-        <a href="/post/create">新增文章</a>
+        <a href="{{route('post.index')}}">文章列表</a>
+        <a href="{{route('post.create')}}">新增文章</a>
     </nav>
     @yield("main")
     @yield("sidebar")

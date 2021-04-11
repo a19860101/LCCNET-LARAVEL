@@ -17,9 +17,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/post','PostController@index');
-Route::get('/post/create','PostController@create');
-Route::get('/post/edit','PostController@edit');
+Route::get('/post','PostController@index')->name('post.index');
+Route::get('/post/create','PostController@create')->name('post.create');
+Route::get('/post/edit','PostController@edit')->name('post.edit');
 
 Auth::routes();
 
