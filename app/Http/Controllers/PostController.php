@@ -9,7 +9,11 @@ class PostController extends Controller
 {
     //
     function index(){
-        return view('post.index');
+        $posts = DB::select('SELECT * FROM posts');
+
+        foreach($posts as $post){
+           print_r($post);
+        }
     }
     function create(){
         return view('post.create');
@@ -24,6 +28,7 @@ class PostController extends Controller
             now(),
             now()
         ]);
-        return 'success';
+
+        return redirect()->route('post.index');
     }
 }
