@@ -16,7 +16,7 @@ class PostController extends Controller
     function edit(){
         return view('post.edit');
     }
-    function store(){
-        return 'store';
+    function store(Request $request){
+        return $request;
     }
 }
