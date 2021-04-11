@@ -23,6 +23,7 @@ Route::get('/post/edit','PostController@edit')->name('post.edit');
 
 Route::post('/post/store','PostController@store')->name('post.store');
 Route::get('/post/show/{id}','PostController@show')->name('post.show');
+Route::delete('/post/{id}','PostController@delete')->name('post.delete');
 
 Auth::routes();
 
