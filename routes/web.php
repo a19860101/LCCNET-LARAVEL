@@ -19,6 +19,7 @@ Route::get('/', function () {
 
 Route::get('/post','PostController@index');
 Route::get('/post/create','PostController@create');
+Route::get('/post/edit','PostController@edit');
 
 Auth::routes();
 

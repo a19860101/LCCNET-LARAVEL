@@ -12,5 +12,6 @@
         <a href="/post/create">新增文章</a>
     </nav>
     @yield("main")
+    @yield("sidebar")
 </body>
 </html>
