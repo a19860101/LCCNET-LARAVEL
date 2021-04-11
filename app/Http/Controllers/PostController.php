@@ -11,7 +11,16 @@ class PostController extends Controller
     function index(){
         $posts = DB::select('SELECT * FROM posts');
 
-        return view('post.index',['posts'=>$posts]);
+        // return view('post.index',['posts'=>$posts]);
+        // return view('post.index')->with(['posts'=>$posts]);
+        // return view('post.index')->with('posts',$posts);
+        return view('post.index',compact('posts'));
+    }
+    function show($id){
+        $posts = DB::select('SELECT * FROM posts WHERE id = ?',[
+            $id
+        ]);
+        return $posts;
     }
     function create(){
         return view('post.create');
