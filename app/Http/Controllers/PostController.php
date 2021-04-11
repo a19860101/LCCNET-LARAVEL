@@ -18,9 +18,9 @@ class PostController extends Controller
     }
     function show($id){
         $posts = DB::select('SELECT * FROM posts WHERE id = ?',[
-            $id
+            $id 
         ]);
-        return $posts;
+        return view('post.show',compact('posts'));
     }
     function create(){
         return view('post.create');
