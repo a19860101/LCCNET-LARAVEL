@@ -25,8 +25,11 @@ class PostController extends Controller
     function create(){
         return view('post.create');
     }
-    function edit(){
-        return view('post.edit');
+    function edit($id){
+        $posts = DB::select('SELECT * FROM posts WHERE id = ?',[
+            $id 
+        ]);
+        return view('post.edit',compact('posts'));
     }
     function store(Request $request){
         DB::insert('INSERT INTO posts(title,content,created_at,updated_at)VALUES(?,?,?,?)',[

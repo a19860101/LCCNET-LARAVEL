@@ -14,6 +14,7 @@
     @method('delete')
     <input type="submit" value="刪除">
 </form>
+<a href="{{route('post.edit',['id'=>$post->id])}}">編輯</a>
 @endforeach
 
 @endsection
