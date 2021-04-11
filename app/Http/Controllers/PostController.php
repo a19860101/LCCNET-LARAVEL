@@ -11,9 +11,7 @@ class PostController extends Controller
     function index(){
         $posts = DB::select('SELECT * FROM posts');
 
-        foreach($posts as $post){
-           print_r($post);
-        }
+        return view('post.index',['posts'=>$posts]);
     }
     function create(){
         return view('post.create');
