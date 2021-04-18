@@ -24,7 +24,8 @@ Route::get('/post/edit/{id}','PostController@edit')->name('post.edit');
 Route::post('/post/store','PostController@store')->name('post.store');
 Route::get('/post/show/{id}','PostController@show')->name('post.show');
 Route::delete('/post/{id}','PostController@delete')->name('post.delete');
-Route::put('/post','PostController@update')->name('post.update');
+// Route::put('/post','PostController@update')->name('post.update');
+Route::patch('/post','PostController@update')->name('post.update');
 
 
 // laravel_test

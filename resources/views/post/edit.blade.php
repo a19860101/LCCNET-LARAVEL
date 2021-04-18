@@ -4,7 +4,7 @@
 @foreach($posts as $post)
 <form action="{{route('post.update',['id'=>$post->id])}}" method="post">
     @csrf
-    @method('put')
+    @method('patch')
     <div>
         <label for="">文章標題</label>
         <input type="text" name="title" value="{{$post->title}}">

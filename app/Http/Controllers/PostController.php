@@ -54,6 +54,7 @@ class PostController extends Controller
             now(),
             $request->id
         ]);
-        return redirect()->route('post.index');
+        // return redirect()->route('post.index');
+        return $request;
     }
 }
