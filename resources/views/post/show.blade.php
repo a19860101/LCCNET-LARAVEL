@@ -1,7 +1,6 @@
 @extends('template.master')
 @section('main')
 
-@foreach($posts as $post)
 <h2>{{$post->title}}</h2>
 <div>
     {{$post->content}}
@@ -15,6 +14,5 @@
     <input type="submit" value="刪除">
 </form>
 <a href="{{route('post.edit',['id'=>$post->id])}}">編輯</a>
-@endforeach
 
 @endsection
