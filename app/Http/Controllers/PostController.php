@@ -47,4 +47,7 @@ class PostController extends Controller
 
         return redirect()->route('post.index');
     }
+    function update(Request $request){
+        return $request;
+    }
 }
