@@ -46,11 +46,15 @@ class PostController extends Controller
         // $post->save();
 
         //方法二
+        // $post = new Post;
+        // $post->fill([
+        //     'title' => $request->title,
+        //     'content' => $request->content
+        // ]);
+        // $post->save(); 
+        //方法三
         $post = new Post;
-        $post->fill([
-            $post->title => $request->title,
-            $post->content => $request->content
-        ]);
+        $post->fill($request->all());
         $post->save(); 
     }
 
