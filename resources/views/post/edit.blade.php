@@ -1,8 +1,7 @@
 @extends("template.master")
 @section("main")
 <h1>編輯文章</h1>
-@foreach($posts as $post)
-<form action="{{route('post.update',['id'=>$post->id])}}" method="post">
+<form action="{{route('post.update',['post'=>$post->id])}}" method="post">
     @csrf
     @method('patch')
     <div>
@@ -15,5 +14,4 @@
     </div>
     <input type="submit" value="編輯文章 "> 
 </form>
-@endforeach
 @endsection
