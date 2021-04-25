@@ -29,6 +29,7 @@ Route::get('/', function () {
 
 
 Route::resource('/post','PostController');
+Route::resource('/category','CategoryController');
 
 
 // laravel_test

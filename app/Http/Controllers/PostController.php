@@ -74,6 +74,8 @@ class PostController extends Controller
     public function show(Post $post)
     {
         //
+        // return $post;
+        return view('post.show',compact('post'));
     }
 
     /**
@@ -85,6 +87,7 @@ class PostController extends Controller
     public function edit(Post $post)
     {
         //
+        return view('post.edit',compact('post'));
     }
 
     /**
@@ -97,6 +100,19 @@ class PostController extends Controller
     public function update(Request $request, Post $post)
     {
         //
+        // $post = Post::findOrFail($post->id);
+        $post->fill($request->all());
+        
+        // $post->fill([
+        //     'title'     => $request->title,
+        //     'content'   => $request->content
+        // ]);
+        
+        // $post->title = $request->title;
+        // $post->content = $request->content;
+        
+        $post->save();
+        return redirect()->route('post.index');
     }
 
     /**
@@ -108,5 +124,10 @@ class PostController extends Controller
     public function destroy(Post $post)
     {
         //
+        // $post->delete();
+
+        Post::destroy($post->id);
+
+        return redirect()->route('post.index');
     }
 }
