@@ -6,6 +6,9 @@
 <div>
     <h2>{{$post->title}}</h2>
     <div>
+        {{$post->category->title}}
+    </div>
+    <div>
         {{$post->content}}
         <a href="{{route('post.show',['post'=>$post->id])}}">繼續閱讀</a>
     </div>
