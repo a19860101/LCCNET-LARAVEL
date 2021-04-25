@@ -17,7 +17,14 @@
 <div>
     <ul>
         @foreach($categories as $category)
-        <li>{{$category->title}} / {{$category->slug}}</li>
+        <li>
+            {{$category->title}} / {{$category->slug}}
+            <form action="{{route('category.destroy',['category'=>$category->id])}}" method="post">
+                @csrf
+                @method('delete')
+                <input type="submit" value="刪除" onclick="return confirm('確認刪除？')">
+            </form>
+        </li>
         @endforeach
     </ul>
 
