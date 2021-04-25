@@ -8,6 +8,14 @@
         <input type="text" name="title">
     </div>
     <div>
+        <label for="">文章分類</label>
+        <select name="category_id" id="">
+            @foreach($categories as $category)
+            <option value="{{$category->id}}">{{$category->title}} / {{$category->slug}}</option>
+            @endforeach
+        </select>
+    </div>
+    <div>
         <label for="">內文</label>
         <textarea name="content" id="" cols="30" rows="10"></textarea>
     </div>
