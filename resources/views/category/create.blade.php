@@ -14,4 +14,12 @@
         <input type="submit" value="新增標題">
     </form>
 </div>
+<div>
+    <ul>
+        @foreach($categories as $category)
+        <li>{{$category->title}} / {{$category->slug}}</li>
+        @endforeach
+    </ul>
+
+</div>
 @endsection
