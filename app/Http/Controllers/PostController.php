@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Post;
 use App\Category;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 
 class PostController extends Controller
 {
@@ -139,6 +140,9 @@ class PostController extends Controller
         return redirect()->route('post.index');
     }
     public function upload(){
-        return 'upload';
+        $ext = request()->file('file')->getClientOriginalExtension();
+        $img = Str::uuid().'.'.$ext;
+        request()->file('file')->storeAs('images',$img,'public');
+        return request()->json(['location' => '/storage/images/'.$img]);
     }
 }
