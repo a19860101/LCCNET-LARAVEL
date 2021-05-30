@@ -20,6 +20,13 @@
     <div class="col-lg-8 col-10 border border-secondary rounded p-5 my-3">
         <div>
             <h2>{{$post->title}}</h2>
+            <div>
+                作者 : 
+                    <a href="#">
+                        {{$post->user->name}}
+                    </a>
+
+            </div>
             <div class="cover">
                 @if($post->cover)
                 <img src="{{asset('storage/images/'.$post->cover)}}" alt="">
