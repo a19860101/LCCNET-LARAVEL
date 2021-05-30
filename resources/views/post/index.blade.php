@@ -12,7 +12,7 @@
                 分類 <span  class="badge bg-secondary">{{$post->category->title}}</span>
             </div>
             <div class="my-3">
-                {{$post->content}}
+                {{ Str::limit(strip_tags($post->content),200) }}
             </div>
             <div class="text-end">
                 <a href="{{route('post.show',['post'=>$post->id])}}" class="btn btn-primary">繼續閱讀</a>

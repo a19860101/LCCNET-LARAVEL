@@ -37,7 +37,7 @@
         height: 500,
         plugins: 'lists image imagetools',
         toolbar: 
-            'image | ' +
+            'removeformat | image | ' +
             'undo redo | styleselect bullist numlist |bold italic forecolor|'+
             'underline strikethrough | alignleft aligncenter alignright'
     });

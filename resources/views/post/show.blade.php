@@ -4,7 +4,7 @@
     <div class="col-lg-8 col-10 border p-5 rounded bg-light">
         <h1>{{$post->title}}</h1>
         <div class="my-3">
-            {{$post->content}}
+            {!! $post->content !!}
         </div>
         <div class="my-3">
             最後更新時間{{$post->updated_at}}
