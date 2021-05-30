@@ -14,7 +14,7 @@
 </style>
 <div class="row justify-content-center">
     <div class="col-lg-8 col-10">
-        <h1>文章列表</h1>
+        <h1>{{ __('Index') }}</h1>
     </div>
     @foreach($posts as $post)
     <div class="col-lg-8 col-10 border border-secondary rounded p-5 my-3">
@@ -25,7 +25,6 @@
                     <a href="#">
                         {{$post->user->name}}
                     </a>
-
             </div>
             <div class="cover">
                 @if($post->cover)
