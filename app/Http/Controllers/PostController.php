@@ -69,7 +69,8 @@ class PostController extends Controller
             $cover = Str::uuid().'.'.$ext;
             $request->file('cover')->storeAs('images',$cover,'public');
         }else{
-            $cover = null;
+            // $cover = null;
+            $cover = 'question-marks.jpg';
         }
        
        
