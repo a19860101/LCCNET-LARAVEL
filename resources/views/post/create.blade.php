@@ -34,7 +34,12 @@
     tinymce.init({
         selector: '#content',
         language:'zh_TW',
-        height: 500
+        height: 500,
+        plugins: 'lists image imagetools',
+        toolbar: 
+            'image | ' +
+            'undo redo | styleselect bullist numlist |bold italic forecolor|'+
+            'underline strikethrough | alignleft aligncenter alignright'
     });
 </script>
 @endsection
