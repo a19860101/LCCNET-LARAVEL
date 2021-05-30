@@ -16,5 +16,6 @@
             @method('delete')
             <input type="submit" value="刪除" class="btn btn-danger">
         </form>
+    </div>
 </div>
 @endsection
