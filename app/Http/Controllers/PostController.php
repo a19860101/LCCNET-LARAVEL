@@ -64,12 +64,14 @@ class PostController extends Controller
         //方法四
         // Post::create($request->all());
 
-        $post = new Post;
-        $post->fill($request->all());
-        $post->category_id = $request->category_id;
+        // $post = new Post;
+        // $post->fill($request->all());
+        // $post->category_id = $request->category_id;
 
-        $post->save(); 
-        return redirect()->route('post.index');
+        // $post->save(); 
+        // return redirect()->route('post.index');
+
+        return $request->file('cover')->store('test','public');
 
     }
 
