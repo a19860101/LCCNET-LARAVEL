@@ -143,6 +143,6 @@ class PostController extends Controller
         $ext = request()->file('file')->getClientOriginalExtension();
         $img = Str::uuid().'.'.$ext;
         request()->file('file')->storeAs('images',$img,'public');
-        return request()->json(['location' => '/storage/images/'.$img]);
+        return response()->json(['location' => '/storage/images/'.$img]);
     }
 }

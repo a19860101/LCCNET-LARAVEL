@@ -5,7 +5,7 @@
         <h1>新增文章</h1>
     </div>
     <div class="col-lg-8 col-10">
-        <form action="{{route('post.store')}}" method="post">
+        <form action="{{route('post.store')}}" method="post" enctype="multipart/form-data">
             @csrf
             <div class="mb-3">
                 <label for="" class="form-label">文章標題</label>
