@@ -30,7 +30,7 @@ Route::get('/', function () {
 
 Route::resource('/post','PostController');
 Route::resource('/category','CategoryController');
-Route::get('/upload','PostController@upload');
+Route::post('/upload','PostController@upload');
 
 // laravel_test
 // Route::get('/post','PostController@index')->name('post.index');
