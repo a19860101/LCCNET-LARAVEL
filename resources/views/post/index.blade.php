@@ -18,7 +18,11 @@
                 <a href="{{route('post.show',['post'=>$post->id])}}" class="btn btn-primary">繼續閱讀</a>
             </div>
             <div>
-                最後更新時間 {{$post->updated_at}}
+                建立時間 {{$post->created_at}}
+                <hr>
+                <?php Carbon\Carbon::setLocale('zh_TW'); ?>
+                最後更新時間 {{ Carbon\Carbon::parse($post->updated_at)->diffForHumans()}}
+
             </div>
         </div>
     </div>
