@@ -29,7 +29,8 @@ Route::get('/', function () {
 
 
 Route::resource('/post','PostController');
-Route::resource('/category','CategoryController');
+Route::get('/post/create','PostController@create')->name('post.create')->middleware('auth');
+Route::resource('/category','CategoryController')->middleware('auth');
 Route::post('/upload','PostController@upload');
 
 // laravel_test
