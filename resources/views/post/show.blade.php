@@ -6,16 +6,24 @@
         <div class="my-3">
             {!! $post->content !!}
         </div>
+        <div>
+                作者 : 
+                    <a href="#">
+                        {{$post->user->name}}
+                    </a>
+            </div>
         <div class="my-3">
             最後更新時間{{$post->updated_at}}
         </div>
         <a href="{{route('post.index')}}" class="btn btn-success">文章列表</a>
+        @if(Auth::id() == $post->user_id)
         <a href="{{route('post.edit',['post'=>$post->id])}}" class="btn btn-info">編輯</a>
         <form action="{{route('post.destroy',['post'=>$post->id])}}" method="post" class="d-inline-block">
             @csrf
             @method('delete')
             <input type="submit" value="刪除" class="btn btn-danger">
         </form>
+        @endif
     </div>
 </div>
 @endsection
