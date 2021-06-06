@@ -28,8 +28,14 @@ Route::get('/', function () {
 // Route::patch('/post','PostController@update')->name('post.update');
 
 
-Route::resource('/post','PostController');
-Route::get('/post/create','PostController@create')->name('post.create')->middleware('auth');
+// Route::resource('/post','PostController');
+// Route::get('/post/create','PostController@create')->name('post.create')->middleware('auth');
+
+Route::group(['middleware'=>'auth'],function(){
+    Route::resource('/post','PostController')->except('index','show');
+});
+Route::resource('/post','PostController')->only('index','show');
+
 Route::resource('/category','CategoryController')->middleware('auth');
 Route::post('/upload','PostController@upload');
 
